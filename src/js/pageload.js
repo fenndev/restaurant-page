@@ -1,7 +1,8 @@
-import loadContactPage from "./contact";
+import loadContactPage from "./contact-page";
 import loadMainPage from "./main-page";
 
 export default function pageLoad(pageName) {
+    console.log(content);
     switch(pageName) {
         case "menu":
             loadMenuPage();
@@ -9,7 +10,7 @@ export default function pageLoad(pageName) {
         case "contact":
             loadContactPage();
             break;
-        case "main":
+        default:
             loadMainPage();
             break;
     }

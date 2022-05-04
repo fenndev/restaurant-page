@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/js/contact.js":
-/*!***************************!*\
-  !*** ./src/js/contact.js ***!
-  \***************************/
+/***/ "./src/js/contact-page.js":
+/*!********************************!*\
+  !*** ./src/js/contact-page.js ***!
+  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -29,23 +29,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _images_flower_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../images/flower.jpg */ "./src/images/flower.jpg");
 
-function loadMainPage() {
-  var content = document.createElement('div');
-  content.id = 'content';
-  document.body.appendChild(content);
-  console.log(content);
-  var image = document.createElement('img');
-  image.setAttribute('src', "".concat(_images_flower_jpg__WEBPACK_IMPORTED_MODULE_0__));
+function loadMainPage(content) {
+  var contentBody = document.createElement('div');
+  contentBody.classList.add("content-body");
+  content.appendChild(contentBody);
   var headline = document.createElement('h2');
   headline.textContent = "Disco Bar";
   var tagline = document.createElement('h3');
   tagline.textContent = "Party like it's 1987!";
   var copy = document.createElement('p');
   copy.textContent = "There's always a new experience waiting at the restaurant, be it a different temporal reality or existential insight; having an existential crisis while waiting for your meal is even encouraged. Eat, drink, shift realities and lose your self!";
-  content.appendChild(image);
-  content.appendChild(headline);
-  content.appendChild(tagline);
-  content.appendChild(copy);
+  var image = document.createElement('img');
+  image.setAttribute('src', "".concat(_images_flower_jpg__WEBPACK_IMPORTED_MODULE_0__));
+  image.classList.add('main-img');
+  contentBody.appendChild(headline);
+  contentBody.appendChild(tagline);
+  contentBody.appendChild(copy);
+  contentBody.appendChild(image);
 }
 ;
 
@@ -61,22 +61,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ pageLoad)
 /* harmony export */ });
-/* harmony import */ var _contact__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./contact */ "./src/js/contact.js");
+/* harmony import */ var _contact_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./contact-page */ "./src/js/contact-page.js");
 /* harmony import */ var _main_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./main-page */ "./src/js/main-page.js");
 
 
 function pageLoad(pageName) {
+  console.log(content);
+
   switch (pageName) {
     case "menu":
-      loadMenuPage();
+      loadMenuPage(content);
       break;
 
     case "contact":
-      (0,_contact__WEBPACK_IMPORTED_MODULE_0__["default"])();
+      (0,_contact_page__WEBPACK_IMPORTED_MODULE_0__["default"])(content);
       break;
 
-    case "main":
-      (0,_main_page__WEBPACK_IMPORTED_MODULE_1__["default"])();
+    default:
+      (0,_main_page__WEBPACK_IMPORTED_MODULE_1__["default"])(content);
       break;
   }
 }
@@ -102,7 +104,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "", "",{"version":3,"sources":[],"names":[],"mappings":"","sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "html {\r\n    height: 100vh;\r\n    width: 100vw;\r\n    overflow: hidden;\r\n}\r\n\r\nbody{ \r\n    height: 100%;\r\n    width: 100%;\r\n    box-sizing: border-box;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n#content {\r\n    height: 60%;\r\n    width: 60%;\r\n}\r\n\r\n.main-img {\r\n    width: 650px;\r\n    border-radius: 100px;\r\n}\r\n\r\n.tab-box {\r\n    \r\n}\r\n\r\n.content-body {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n}", "",{"version":3,"sources":["webpack://./src/css/style.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,YAAY;IACZ,gBAAgB;AACpB;;AAEA;IACI,YAAY;IACZ,WAAW;IACX,sBAAsB;IACtB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;AACvB;;AAEA;IACI,WAAW;IACX,UAAU;AACd;;AAEA;IACI,YAAY;IACZ,oBAAoB;AACxB;;AAEA;;AAEA;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,uBAAuB;IACvB,mBAAmB;AACvB","sourcesContent":["html {\r\n    height: 100vh;\r\n    width: 100vw;\r\n    overflow: hidden;\r\n}\r\n\r\nbody{ \r\n    height: 100%;\r\n    width: 100%;\r\n    box-sizing: border-box;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n#content {\r\n    height: 60%;\r\n    width: 60%;\r\n}\r\n\r\n.main-img {\r\n    width: 650px;\r\n    border-radius: 100px;\r\n}\r\n\r\n.tab-box {\r\n    \r\n}\r\n\r\n.content-body {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -735,6 +737,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var pageManager = function () {
   (0,_pageload__WEBPACK_IMPORTED_MODULE_1__["default"])("main");
+  console.log(content);
 }();
 })();
 

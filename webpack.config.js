@@ -13,6 +13,7 @@ module.exports = {
             title: 'Restaurant Page',
             meta: {viewport: 'width=device-width, initial-scale=1.0'},
             scriptLoading: 'defer',
+            template: './src/html/index.html'
         }),
     ],
     module: {
