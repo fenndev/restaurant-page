@@ -1,11 +1,16 @@
 export default function loadContactPage() {
     let headline = document.createElement('h2');
-    headline.textContent = "This is Just a Test Sweetie";
-    let tagline = document.createElement('h3');
-    tagline.textContent = "Die, haha!";
-    let copy = document.createElement('p');
-    copy.textContent = "Oh, you're reading this?";
+    headline.textContent = "Contact";
+    let contactList = document.createElement('ul');
+    let address = document.createElement('li');
+    let phoneNumber = document.createElement('li')
+    let email = document.createElement('li')
     contentBody.appendChild(headline);
-    contentBody.appendChild(tagline);
-    contentBody.appendChild(copy);
+    contentBody.appendChild(contactList);
+    contactList.appendChild(address);
+    address.textContent = "8127 Nostalgia Road, Lakewood WA 98409";
+    contactList.appendChild(phoneNumber);
+    phoneNumber.textContent = "(887) 217-8431";
+    contactList.appendChild(email);
+    email.textContent = "thediscobar@retro.com";
 };
