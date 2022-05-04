@@ -1,3 +1,6 @@
-import pageLoad from "./pageload";
+import './style.css';
+import pageLoad from './pageload';
 
-pageLoad();
+const pageManager = (() => {
+    pageLoad("main");
+})();

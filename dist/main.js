@@ -2,28 +2,42 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/pageload.js":
-/*!*************************!*\
-  !*** ./src/pageload.js ***!
-  \*************************/
+/***/ "./src/contact.js":
+/*!************************!*\
+  !*** ./src/contact.js ***!
+  \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (/* binding */ loadContactPage)
 /* harmony export */ });
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
-/* harmony import */ var _flower_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./flower.jpg */ "./src/flower.jpg");
+function loadContactPage(contentDiv) {}
+;
+
+/***/ }),
+
+/***/ "./src/main-page.js":
+/*!**************************!*\
+  !*** ./src/main-page.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ loadMainPage)
+/* harmony export */ });
+/* harmony import */ var _images_flower_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./images/flower.jpg */ "./src/images/flower.jpg");
+/* harmony import */ var _audio_Ruler_of_Everything_flac__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./audio/Ruler of Everything.flac */ "./src/audio/Ruler of Everything.flac");
 
 
-
-function pageLoad() {
+function loadMainPage() {
   var content = document.createElement('div');
   content.id = 'content';
   document.body.appendChild(content);
   console.log(content);
   var image = document.createElement('img');
-  image.setAttribute('src', "".concat(_flower_jpg__WEBPACK_IMPORTED_MODULE_1__));
+  image.setAttribute('src', "".concat(_images_flower_jpg__WEBPACK_IMPORTED_MODULE_0__));
   var headline = document.createElement('h2');
   headline.textContent = "Disco Bar";
   var tagline = document.createElement('h3');
@@ -35,8 +49,39 @@ function pageLoad() {
   content.appendChild(tagline);
   content.appendChild(copy);
 }
+;
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pageLoad);
+/***/ }),
+
+/***/ "./src/pageload.js":
+/*!*************************!*\
+  !*** ./src/pageload.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ pageLoad)
+/* harmony export */ });
+/* harmony import */ var _contact__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./contact */ "./src/contact.js");
+/* harmony import */ var _main_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./main-page */ "./src/main-page.js");
+
+
+function pageLoad(pageName) {
+  switch (pageName) {
+    case "menu":
+      loadMenuPage();
+      break;
+
+    case "contact":
+      (0,_contact__WEBPACK_IMPORTED_MODULE_0__["default"])();
+      break;
+
+    case "main":
+      (0,_main_page__WEBPACK_IMPORTED_MODULE_1__["default"])();
+      break;
+  }
+}
 
 /***/ }),
 
@@ -59,7 +104,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n    background-color: black;\r\n}", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;IACI,uBAAuB;AAC3B","sourcesContent":["body {\r\n    background-color: black;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "", "",{"version":3,"sources":[],"names":[],"mappings":"","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -568,13 +613,23 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
-/***/ "./src/flower.jpg":
-/*!************************!*\
-  !*** ./src/flower.jpg ***!
-  \************************/
+/***/ "./src/audio/Ruler of Everything.flac":
+/*!********************************************!*\
+  !*** ./src/audio/Ruler of Everything.flac ***!
+  \********************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "7c9cbd64d66a5f268cf7.jpg";
+module.exports = __webpack_require__.p + "sounds/c617ff4174590fd803f7.flac";
+
+/***/ }),
+
+/***/ "./src/images/flower.jpg":
+/*!*******************************!*\
+  !*** ./src/images/flower.jpg ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "images/7c9cbd64d66a5f268cf7.jpg";
 
 /***/ })
 
@@ -685,9 +740,14 @@ var __webpack_exports__ = {};
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _pageload__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pageload */ "./src/pageload.js");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
+/* harmony import */ var _pageload__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pageload */ "./src/pageload.js");
 
-(0,_pageload__WEBPACK_IMPORTED_MODULE_0__["default"])();
+
+
+var pageManager = function () {
+  (0,_pageload__WEBPACK_IMPORTED_MODULE_1__["default"])("main");
+}();
 })();
 
 /******/ })()
