@@ -1,5 +1,4 @@
-import flowerImage from "./images/flower.jpg";
-import rulerFlac from "./audio/Ruler of Everything.flac"
+import flowerImage from "../images/flower.jpg";
 
 export default function loadMainPage() {
     let content = document.createElement('div');
