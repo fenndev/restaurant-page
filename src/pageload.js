@@ -1,7 +1,13 @@
-function pageLoad(content) {
+import './style.css';
+import flowerImage from "./flower.jpg";
+
+function pageLoad() {
+    let content = document.createElement('div');
+    content.id = 'content';
+    document.body.appendChild(content);
     console.log(content)
     let image = document.createElement('img');
-    image.setAttribute('src', './bar.jpeg');
+    image.setAttribute('src', `${flowerImage}`);
     let headline = document.createElement('h2');
     headline.textContent = "Disco Bar";
     let tagline = document.createElement('h3');
